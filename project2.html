@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="author" content="Matthew J. Musich" />
+		<title>Experiments to Run</title>
+		<h1>We Have Some Experiments to Run</h1>	
+	</head>
+	
+	<body>
+		<script type = "text/Javascript">
+			
+			var score = 0;
+			var x = 1;
+			var w = 1;
+			var y = 1;
+			var z = 1;
+			
+			function btn_go_direction_click(directionnumber) {
+				if (directionnumber === 0 ) {
+					var msg = "There is a strong light when you open the door.  Your eyes slowly adjust to the light.  There is a single sink, toilet and a modern looking white cabinet.  You have the urge to wash your hands, but you are way to busy with more pressing concerns.";
+					updatetext (msg);
+					
+					if ( w === 1 ){
+                
+					score = (score + 5);
+					w++;
+					}
+					}else {
+						
+						if (directionnumber === 1 ) {
+							var msg = "The door to the storage room opens with a loud creak.  You should find some WD40 for that...  The room contains a small stack of boxes, a breaker box, and a mirror with some harsh stains.";
+							updatetext (msg);
+							
+							if ( x === 1 ){
+                
+							score = (score + 5);
+							x++;
+							}
+							}else {
+								
+								if (directionnumber === 2 ) {
+									var msg = "The door to the bedroom was already open.  Upon entering you see a weird looking bed, a metal lock box, and a chest of drawers.  After looking around you feel like taking a nap, but you don't due to the lack of a pillow, warm milk, and blankets.";
+									updatetext (msg);
+									
+									if ( y === 1 ){
+                
+									score = (score + 5);
+									y++;
+									}
+									}else {
+										
+										if (directionnumber === 3 ) {
+											var msg = "You try to open the Western door, but it seems locked.  You try to ram the door with little success other than hurting your arm.  You question your methods of entry and walk away in shame due to your lack of strength.";
+											updatetext (msg);
+											
+											if ( z === 1 ){
+                
+											score = (score + 5);
+											z++;
+											}
+											}else{ 
+											
+											if (directionnumber === 4) {
+												alert("You have " + score + " points.");
+											
+												}
+											}
+										}	
+									}
+								}
+							}
+						
+
+			function updatetext(directionmsg) {
+				var textadd = document.getElementById("textarea1");
+				textadd.value = directionmsg + "\n" + textadd.value;
+			}
+				
+		</script>
+		
+		E-mail me at <a href="mailto:matthew.musich1@marist.edu">matthew.musich1@marist.edu</a> <br>If you have trouble with the tests.
+		
+		<br>
+		<br>
+		
+		<textarea rows="10" cols="70" id="textarea1">You awake in a dim lit room with a single panel on the wall with a small sticker on it. One door leading In each direction.  Lastly a logo on the wall that reads "Aperture Science".  The Northern door is labeled "Bathroom".  The Eastern door is labeled "Storage".  The Southern door is labeled "Bedroom".  The Western door is Labeled "Testing Facility"
+		</textarea>
+		
+		<br>
+		
+		<input type="button"
+				value="Go North"
+				onclick="btn_go_direction_click(0);">
+		<input type="button"
+				value="Go East"
+				onclick="btn_go_direction_click(1);">	
+		<input type="button"
+				value="Go South"
+				onclick="btn_go_direction_click(2);">
+		<input type="button"
+				value="Go West"
+				onclick="btn_go_direction_click(3);">
+		<input type="button"
+				value="Current Score"
+				onclick="btn_go_direction_click(4);">
+	</body>
+</html>
+	
